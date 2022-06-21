@@ -7,7 +7,7 @@
 
 require('./settings')
 const { default:
-    NexusNwIncConnect,
+    makeWASocket,
     useSingleFileAuthState,
     DisconnectReason,
     fetchLatestBaileysVersion,
@@ -92,31 +92,8 @@ if (global.db) setInterval(async () => {
 
 async function DarkEzio_Whats_Bot() {
     print("Bot function started...")
-
-    // const server = http.createServer((req, res) => {
-    //     res.writeHead(200, { 'Content-Type': 'text/html' })
-    //     fs.readFile('./src/static/index.html', (error, data) => {
-    //         if (error) {
-    //             console.log("404 Error found" + error)
-    //             res.writeHead(404)
-    //             res.write("<h1>Error: The File not found</h1><br><h4>" + error + "</h4>")
-    //         }
-    //         else {
-    //             res.write(data)
-    //         }
-    //         res.end()
-    //     })
-    // })
-    // server.listen(port, (error) => {
-    //     if (error) {
-    //         console.log('Something went wrong. ', error)
-    //     }
-    //     else {
-    //         console.log('Server is listening on port ' + port)
-    //     }
-    // })
-
-    const conn = NexusNwIncConnect({
+ 
+    const conn = makeWASocket({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['Gojo Satoru\Nexus', 'Safari', '1.0.0'],
