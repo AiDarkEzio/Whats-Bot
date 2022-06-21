@@ -21,7 +21,7 @@ let _qure = '&query='
 let packname = 'Ai_Dark_Ezio_Wa-Bot'
 let SEND_REED = false
 let author = 'Dark_Ezio'
-let sessionName = 'session'
+let sessionName = 'avuth'
 let prefa = ['','!','.','🐦','🐤','🗿']
 let sp = '⭔'
 
@@ -68,6 +68,7 @@ module.exports = {
     _api_key2,
     _api2_key1,
     _api2_key2,
+    mess,
     _dl,
     _api,
     _url,
@@ -75,5 +76,6 @@ module.exports = {
     D_E_DPC,
     D_E_DP_,
     D_E_TMB,
+    sessionName,
     SEND_REED
 }

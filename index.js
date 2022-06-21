@@ -4,7 +4,7 @@
 //𝙰𝙳𝙾𝙿𝚃𝙴𝙳 𝙵𝚁𝙾𝙼  𝚂𝙲𝚁𝙸𝙿𝚃 𝙾𝙵 𝙲𝙷𝙴𝙴𝙼𝚂𝙱𝙾𝚃 𝚅2 𝙱𝚈 𝙳𝙶𝚇𝚎𝚘𝚗 
 //
 //════════════════════════════//
-
+require('./conf')
 require('./settings')
 const { default:
     makeWASocket,
@@ -18,12 +18,13 @@ const { default:
     downloadContentFromMessage,
     makeInMemoryStore,
     jidDecode,
-    proto
+    proto,
+    useSingleFileLegacyAuthState
 } = require("@adiwajshing/baileys")
 const {
     state,
     saveState
-} = useSingleFileAuthState(`./${sessionName}.json`) // useSingleFileAuthState(`./session.json`)
+} = useSingleFileLegacyAuthState(`./database/${sessionName}.json`) // useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const {
     Boom
