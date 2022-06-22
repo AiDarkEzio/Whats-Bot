@@ -7,7 +7,7 @@
 require('./conf')
 require('./settings')
 const { default:
-    makeWASocket,
+    NexusNwIncConnect,
     useSingleFileAuthState,
     DisconnectReason,
     fetchLatestBaileysVersion,
@@ -24,7 +24,7 @@ const { default:
 const {
     state,
     saveState
-} = useSingleFileLegacyAuthState(`./database/${sessionName}.json`) // useSingleFileAuthState(`./${sessionName}.json`)
+} = useSingleFileLegacyAuthState(`./session.json`) // useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const {
     Boom
@@ -94,7 +94,7 @@ if (global.db) setInterval(async () => {
 async function DarkEzio_Whats_Bot() {
     print("Bot function started...")
  
-    const conn = makeWASocket({
+    const conn = NexusNwIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['Gojo Satoru\Nexus', 'Safari', '1.0.0'],
